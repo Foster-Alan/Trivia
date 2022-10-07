@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import fetchAPI from '../helpers/API';
 
 class Login extends Component {
   state = {
@@ -21,10 +23,17 @@ class Login extends Component {
     this.setState({ isDisabled: !(verifyEmail && verifyName) });
   };
 
+  handleClick = async () => {
+    const { history } = this.props;
+    const token = await fetchAPI();
+    localStorage.setItem('token', token);
+    history.push('/game');
+
   handleChangeButton = (event) => {
     event.preventDefault();
     const { history } = this.props;
     history.push('/configuracoes');
+
   };
 
   render() {
@@ -50,6 +59,7 @@ class Login extends Component {
             type="button"
             data-testid="btn-play"
             disabled={ isDisabled }
+            onClick={ this.handleClick }
           >
             Play
 
@@ -68,9 +78,8 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
-  }).isRequired,
-};
+  history: PropTypes.shape({ push: PropTypes.func }),
+}.isRequired;
 
-export default Login;
+export default connect()(Login);
+
