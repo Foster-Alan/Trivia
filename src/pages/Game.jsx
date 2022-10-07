@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Game extends Component {
   render() {
     return (
-      <div>
+      <div data-testid="game-title">
         game
       </div>
     );
