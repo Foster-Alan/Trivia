@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Configuracoes extends Component {
+class Config extends Component {
   render() {
     return (
       <title data-testid="settings-title">
@@ -10,4 +10,4 @@ class Configuracoes extends Component {
   }
 }
 
-export default Configuracoes;
+export default Config;

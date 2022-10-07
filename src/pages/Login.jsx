@@ -28,12 +28,12 @@ class Login extends Component {
     const token = await fetchAPI();
     localStorage.setItem('token', token);
     history.push('/game');
+  };
 
   handleChangeButton = (event) => {
     event.preventDefault();
     const { history } = this.props;
-    history.push('/configuracoes');
-
+    history.push('/config');
   };
 
   render() {
@@ -82,4 +82,3 @@ Login.propTypes = {
 }.isRequired;
 
 export default connect()(Login);
-
