@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
   state = {
@@ -18,6 +19,12 @@ class Login extends Component {
     const verifyEmail = email.length >= number;
     const verifyName = name.length >= number;
     this.setState({ isDisabled: !(verifyEmail && verifyName) });
+  };
+
+  handleChangeButton = (event) => {
+    event.preventDefault();
+    const { history } = this.props;
+    history.push('/configuracoes');
   };
 
   render() {
@@ -47,10 +54,23 @@ class Login extends Component {
             Play
 
           </button>
+          <button
+            type="button"
+            data-testid="btn-settings"
+            onClick={ this.handleChangeButton }
+          >
+            Configurações
+          </button>
         </form>
       </div>
     );
   }
 }
+
+Login.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default Login;
