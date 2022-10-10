@@ -15,7 +15,6 @@ class Game extends Component {
     isDisabled: false,
     timer: 30,
     assertions: 0,
-    // score: 0,
   };
 
   async componentDidMount() {
@@ -41,7 +40,6 @@ class Game extends Component {
     const intervalue = setInterval(() => {
       const { timer } = this.state;
       this.setState({ timer: timer - 1 });
-      // console.log(timer);
       if (timer <= 0) {
         this.setState({
           isDisabled: true,
@@ -74,6 +72,36 @@ class Game extends Component {
     this.setState({
       timer: 0,
     });
+  };
+
+  nextButton = () => {
+    const { indice } = this.state;
+    const numberOfQuestions = 4;
+    const control = indice < numberOfQuestions ? indice + 1 : indice;
+    this.setState({
+      timer: 30,
+      isDisabled: false,
+      clicked: false,
+      indice: control }, () => { this.contTimer(); });
+    if (indice >= numberOfQuestions) {
+      const { history } = this.props;
+      history.push('/feedback');
+    }
+  };
+
+  handleButton = () => {
+    const { isDisabled } = this.state;
+    if (isDisabled) {
+      return (
+        <button
+          type="button"
+          data-testid="btn-next"
+          onClick={ this.nextButton }
+        >
+          Next
+
+        </button>);
+    }
   };
 
   renderQuestion = (indice, trivia) => {
@@ -134,6 +162,7 @@ class Game extends Component {
         <h1>{timer}</h1>
         <Header />
         {result}
+        {this.handleButton()}
       </div>
     );
   }
