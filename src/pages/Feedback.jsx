@@ -29,12 +29,24 @@ class Feedback extends Component {
 
   render() {
     const { urlFeedback, nameFeedback, scoreFeedback } = this.state;
+    const { assertions, score } = this.props;
+    const three = 3;
+    let message = '';
+    if (assertions >= three) {
+      message = 'Well Done!';
+    } if (assertions < three) {
+      message = 'Could be better...';
+    }
+
     return (
       <div data-testid="feedback-text">
         Feedback
         <img data-testid="header-profile-picture" src={ urlFeedback } alt="foto" />
         <h4 data-testid="header-player-name">{ nameFeedback }</h4>
         <h4 data-testid="header-score">{ scoreFeedback }</h4>
+        <h4 data-testid="feedback-total-score">{ score }</h4>
+        <h4 data-testid="feedback-total-question">{ assertions }</h4>
+        <h4>{ message }</h4>
       </div>
     );
   }
@@ -44,12 +56,14 @@ const mapStateToProps = (state) => ({
   gravatarEmail: state.player.gravatarEmail,
   name: state.player.name,
   score: state.player.score,
+  assertions: state.player.assertions,
 });
 
 Feedback.propTypes = {
   gravatarEmail: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,
+  assertions: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(Feedback);
