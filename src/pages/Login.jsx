@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import fetchAPI from '../helpers/API';
+import { login } from '../redux/actions';
 
 class Login extends Component {
   state = {
@@ -24,9 +25,11 @@ class Login extends Component {
   };
 
   handleClick = async () => {
-    const { history } = this.props;
-    const token = await fetchAPI();
-    localStorage.setItem('token', token);
+    const { name, email } = this.state;
+    const { dispatch, history } = this.props;
+    const resultApi = await fetchAPI();
+    localStorage.setItem('token', resultApi);
+    dispatch(login({ name, email }));
     history.push('/game');
   };
 
@@ -37,7 +40,7 @@ class Login extends Component {
   };
 
   render() {
-    const { isDisabled } = this.state;
+    const { isDisabled, email, name } = this.state;
     return (
       <div>
         <form>
@@ -47,6 +50,7 @@ class Login extends Component {
             data-testid="input-player-name"
             placeholder="Nome"
             onChange={ this.handleChange }
+            value={ name }
           />
           <input
             type="text"
@@ -54,12 +58,14 @@ class Login extends Component {
             data-testid="input-gravatar-email"
             placeholder="Email"
             onChange={ this.handleChange }
+            value={ email }
           />
           <button
             type="button"
             data-testid="btn-play"
             disabled={ isDisabled }
             onClick={ this.handleClick }
+            value={ isDisabled }
           >
             Play
 
