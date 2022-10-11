@@ -2,6 +2,7 @@ import md5 from 'crypto-js/md5';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { newGame, save } from '../redux/actions';
 
 class Feedback extends Component {
   state = {
@@ -11,9 +12,10 @@ class Feedback extends Component {
   };
 
   componentDidMount() {
-    const { gravatarEmail, name, score } = this.props;
+    const { gravatarEmail, name, score, dispatch } = this.props;
     const hash = md5(gravatarEmail).toString();
     const url = `https://www.gravatar.com/avatar/${hash}`;
+    dispatch(save({ name, score, url }));
     localStorage.setItem('ranking', JSON.stringify([{ name, score, url }]));
     this.getFeedback();
   }
@@ -28,7 +30,8 @@ class Feedback extends Component {
   };
 
   playAgain = () => {
-    const { history } = this.props;
+    const { history, dispatch } = this.props;
+    dispatch(newGame());
     history.push('/');
   };
 
@@ -42,6 +45,7 @@ class Feedback extends Component {
     const { assertions, score } = this.props;
     const three = 3;
     let message = '';
+    console.log(assertions, 'acertos');
     if (assertions >= three) {
       message = 'Well Done!';
     } if (assertions < three) {
@@ -86,6 +90,7 @@ const mapStateToProps = (state) => ({
 });
 
 Feedback.propTypes = {
+  dispatch: PropTypes.func.isRequired,
   gravatarEmail: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   score: PropTypes.number.isRequired,

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import TriviaApi from '../helpers/TriviaApi';
 import { assertionValue, scoreValue } from '../redux/actions';
+import multiplyFunc from '../helpers/multiply';
 
 const order = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
 
@@ -26,6 +27,7 @@ class Game extends Component {
         this.contTimer();
       });
     } else {
+      console.log('entrou no else, token invalido');
       this.setState({
         trivia: [],
       }, () => {
@@ -50,22 +52,12 @@ class Game extends Component {
 
   showAnswer = (item) => {
     this.setState({ clicked: true });
-    const multiplic = 10;
-    const numberHard = 3;
-    const numberEasy = 1;
-    const numberMedium = 2;
-    let dificultyValue = 0;
     const { trivia, timer } = this.state;
+    // console.log(item, trivia, 'item');
+    let dificultyValue = 0;
     if (typeof item !== 'undefined') {
       this.setState((state) => ({ assertions: state.assertions + 1 }));
-      const dificulty = trivia[item].difficulty;
-      if (dificulty === 'hard') {
-        dificultyValue = multiplic + (timer * numberHard);
-      } else if (dificulty === 'medium') {
-        dificultyValue = multiplic + (timer * numberMedium);
-      } else {
-        dificultyValue = multiplic + (timer * numberEasy);
-      }
+      dificultyValue = multiplyFunc(trivia, item, timer);
     }
     const { dispatch } = this.props;
     dispatch(scoreValue(dificultyValue));
@@ -78,6 +70,7 @@ class Game extends Component {
     const { indice } = this.state;
     const numberOfQuestions = 4;
     const control = indice < numberOfQuestions ? indice + 1 : indice;
+    console.log(control, 'clicou no prox');
     this.setState({
       timer: 30,
       isDisabled: false,
@@ -136,7 +129,7 @@ class Game extends Component {
                   disabled={ isDisabled }
                   name="incorrect"
                   className={ clicked ? 'incorrect' : 'button' }
-                  onClick={ () => this.showAnswer() }
+                  onClick={ () => this.showAnswer(indice) }
                 >
                   {item}
                 </button>
