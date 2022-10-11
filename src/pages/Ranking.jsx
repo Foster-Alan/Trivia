@@ -27,7 +27,7 @@ class Ranking extends Component {
       <div key={ index }>
         <img src={ item.url } alt="imagem" />
         <h1 data-testid={ `player-score-${index}` }>{item.score}</h1>
-        <h1 data-testid={ `player-name-${index}` }>{item.name}</h1>
+        <span data-testid={ `player-name-${index}` }>{item.name}</span>
       </div>
     )));
 
@@ -41,7 +41,7 @@ class Ranking extends Component {
           data-testid="btn-go-home"
           onClick={ this.playAgain }
         >
-          Ranking
+          Play Again
 
         </button>
         { this.renderRanking(ranking) }

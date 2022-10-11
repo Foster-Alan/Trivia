@@ -45,6 +45,7 @@ class Feedback extends Component {
     const { assertions, score } = this.props;
     const three = 3;
     let message = '';
+    console.log(assertions, 'acertos');
     if (assertions >= three) {
       message = 'Well Done!';
     } if (assertions < three) {
