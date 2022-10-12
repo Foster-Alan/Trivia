@@ -71,14 +71,14 @@ describe('Testando a tela de game', () => {
     const fifthQuestion = await screen.findByText(/Who was the Author of the manga Uzumaki/i);
     expect(fifthQuestion).toBeInTheDocument();
 
-    // userEvent.click(screen.getByTestId('correct-answer'));
-    // userEvent.click(await screen.findByTestId('btn-next'));
-    // await screen.findByTestId('feedback-text');
-    // expect(history.location.pathname).toBe('/feedback');
+    userEvent.click(screen.getByTestId('correct-answer'));
+    userEvent.click(await screen.findByTestId('btn-next'));
+    await screen.findByTestId('feedback-text');
+    expect(history.location.pathname).toBe('/feedback');
     // await waitFor(() => {
     //     expect(history.location.pathname).toBe('/feedback');
     //   })
-  });
+  }, 10000);
   test('Testando o token', async () => {
     global.fetch = jest.fn(async (endpoint) => ({
         json: async () => {

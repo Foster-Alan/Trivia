@@ -129,7 +129,7 @@ class Game extends Component {
                   disabled={ isDisabled }
                   name="incorrect"
                   className={ clicked ? 'incorrect' : 'button' }
-                  onClick={ () => this.showAnswer(indice) }
+                  onClick={ () => this.showAnswer() }
                 >
                   {item}
                 </button>
