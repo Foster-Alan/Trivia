@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
+import { BiTime } from 'react-icons/bi';
+
 import Header from '../components/Header';
 import TriviaApi from '../helpers/TriviaApi';
 import { assertionValue, scoreValue } from '../redux/actions';
 import multiplyFunc from '../helpers/multiply';
+import '../Styles/Game.css';
 
 const order = [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()];
 
@@ -87,6 +91,7 @@ class Game extends Component {
     if (isDisabled) {
       return (
         <button
+          className="css-button-arrow--black"
           type="button"
           data-testid="btn-next"
           onClick={ this.nextButton }
@@ -104,10 +109,12 @@ class Game extends Component {
       .sort(() => order[indice] - num);
 
     return (
-      <div>
-        <h3 data-testid="question-category">{trivia[indice].category}</h3>
-        <h3 data-testid="question-text">{trivia[indice].question}</h3>
-        <div data-testid="answer-options">
+      <div className="content-question-game">
+        <div className="quest-game">
+          <h3 data-testid="question-category">{trivia[indice].category}</h3>
+          <h3 data-testid="question-text">{trivia[indice].question}</h3>
+        </div>
+        <div data-testid="answer-options" className="answer-options">
           {result.map((item, index) => (
             item === trivia[indice].correct_answer
               ? (
@@ -151,11 +158,18 @@ class Game extends Component {
       result = [];
     }
     return (
-      <div data-testid="game-title">
-        <h1>{timer}</h1>
+      <div data-testid="game-title" className="geral-page-game">
         <Header />
-        {result}
-        {this.handleButton()}
+        <div className="content-page-game">
+          <h1>
+            <BiTime />
+            {' '}
+            {timer}
+
+          </h1>
+          {result}
+          {this.handleButton()}
+        </div>
       </div>
     );
   }

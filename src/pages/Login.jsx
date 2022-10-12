@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+import { GrConfigure } from 'react-icons/gr';
+
 import fetchAPI from '../helpers/API';
 import { login } from '../redux/actions';
+import '../Styles/Login.css';
+import logo from '../trivia.png';
 
 class Login extends Component {
   state = {
@@ -42,42 +47,46 @@ class Login extends Component {
   render() {
     const { isDisabled, email, name } = this.state;
     return (
-      <div>
-        <form>
-          <input
-            type="text"
-            name="name"
-            data-testid="input-player-name"
-            placeholder="Nome"
-            onChange={ this.handleChange }
-            value={ name }
-          />
-          <input
-            type="text"
-            name="email"
-            data-testid="input-gravatar-email"
-            placeholder="Email"
-            onChange={ this.handleChange }
-            value={ email }
-          />
-          <button
-            type="button"
-            data-testid="btn-play"
-            disabled={ isDisabled }
-            onClick={ this.handleClick }
-            value={ isDisabled }
-          >
-            Play
+      <div className="Login">
+        <img src={ logo } className="App-logo" alt="logo" />
+        <div className="content-login">
+          <form className="form-login">
+            <input
+              type="text"
+              name="name"
+              data-testid="input-player-name"
+              placeholder="Nome"
+              onChange={ this.handleChange }
+              value={ name }
+            />
+            <input
+              type="text"
+              name="email"
+              data-testid="input-gravatar-email"
+              placeholder="Email"
+              onChange={ this.handleChange }
+              value={ email }
+            />
+            <button
+              type="button"
+              data-testid="btn-play"
+              disabled={ isDisabled }
+              onClick={ this.handleClick }
+              value={ isDisabled }
+            >
+              Play
 
-          </button>
-          <button
-            type="button"
-            data-testid="btn-settings"
-            onClick={ this.handleChangeButton }
-          >
-            Configurações
-          </button>
-        </form>
+            </button>
+            <button
+              className="button-login"
+              type="button"
+              data-testid="btn-settings"
+              onClick={ this.handleChangeButton }
+            >
+              <GrConfigure />
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

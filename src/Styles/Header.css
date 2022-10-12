@@ -1,0 +1,18 @@
+.content-header header {
+    border-bottom: 2px solid rgba(58, 58, 116, 0.815);
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    width: 70%;
+  }
+  
+.content-header h2 {
+    text-align: center;
+  }
+  
+.content-header img {
+    border-radius: 20px 0;
+    max-width: 100px;
+  }
+  
