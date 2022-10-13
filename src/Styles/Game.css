@@ -1,122 +1,132 @@
-.geral-page-game {
-    align-items: center;
-  
-    /* border: 1px red solid; */
-    display: flex;
-    flex-direction: column;
-    /* height: 90vh; */
-    justify-content: center;
-  }
-  
-  .content-page-game {
-    align-items: center;
-  
-    /* border: blue solid 1px; */
-    display: flex;
-    flex-direction: column;
-    /* height: 70%; */
-    justify-content: center;
-    /* width: 90%; */
-  }
-  
-  .quest-game {
-    border-left: rgba(255, 196, 1, 0.815) solid 5px;
-    border-right: rgba(255, 196, 1, 0.815) solid 5px;
-    border-top: rgba(255, 196, 1, 0.815) solid 5px;
-    padding: 10px 5px;
-    width: 100%;
-  }
-  
-  .answer-options {
-    align-items: center;
-    border: rgba(255, 196, 1, 0.815) solid 5px;
-    display: flex;
-    flex-direction: column;
-    padding: 50px 5px;
-    width: 100%;
-  }
-  
-  .answer-options button {
-    background-color: rgb(255, 208, 0);
-  
-    /* border: yellow solid 1px; */
-    border-radius: 10px 0;
-    color: rgb(0, 0, 0);
-    font-size: large;
-    font-weight: 900;
-    height: 40px;
-    margin-bottom: 10px;
-    width: 60%;
-  }
-  
-  button:hover {
-    cursor: pointer;
-  }
-  
-  .answer-options button:hover {
-    background-color: rgb(255, 255, 255);
-    width: 63%;
-  }
-  
-  
-  .content-question-game {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* .button-next {
-    background-color: rgb(255, 230, 0);
-    border-radius: 10px;
-    color: rgb(9, 9, 9);
-    font-weight: 800;
-    height: 30px;
-    margin-top: 10px;
-    width: 80px;
-  } */
+.geral-page-game body {
+  margin: 0;
+  background-color: rgba(248,175,11,255);
+  background-image: url("https://www.faarmembers.com/wp-content/uploads/2019/01/trivia-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;                                                                                                                                                                         
+}
 
+.content-question-game {
+  max-width: 800px;
+}
+
+.content-page-game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Redkost Comic', sans-serif;
+                                                
+}
+
+.quest-game {
+  background-color:rgba(220,92,31);
+  border: solid rgb(0, 0, 0) 5px;
+  box-shadow: 5px 8px black;
+  /* background-color: grey; */
+  border-radius: 25px;
+  padding: 10px 5px;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.answer-options {
+  font-family: 'Redkost Comic', sans-serif;                                         
+  background-color:rgba(220,92,31);
+  border: solid rgb(0, 0, 0) 5px;                                     
+  box-shadow: 5px 8px black;
+  align-items: center;
+  border: black solid 5px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 5px;
+  width: 100%;
+}
+
+.answer-options button {
+  font-family: 'Redkost Comic', sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px 0;
+  box-shadow: 5px 8px black;
+  color: rgb(0, 0, 0);
+  font-size: large;
+  font-weight: 900;
+  height: 40px;
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.answer-options button:hover {
+  background-color: rgb(87, 86, 85);
+  /* width: 63%; */
+}
+
+.content-question-game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
 .correct {
-    border: 3px solid rgb(6, 240, 15);
-  }
-  
-.incorrect {
-    border: 3px solid red;
-  }
+  background-color: rgb(6, 240, 15);
+  border: 3px solid rgb(6, 240, 15);
+}
 
-  .css-button-arrow--black {
-    margin-bottom: 00px;
-    min-width: 130px;
-    height: 40px;
-    color: #fff;
-    padding: 5px 10px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    outline: none;
-    overflow: hidden;
-    border-radius: 5px;
-    border: none;
-    background-color: #3d4034
-  }
-  .css-button-arrow--black:hover {
-    border-radius: 5px;
-    padding-right: 24px;
-    padding-left:8px;
-  }
-  .css-button-arrow--black:hover:after {
-    opacity: 1;
-    right: 10px;
-  }
-  .css-button-arrow--black:after {
-    content: "\00BB";
-    position: absolute;
-    opacity: 0;
-    font-size: 20px;
-    line-height: 40px;
-    top: 0;
-    right: -20px;
-    transition: 0.4s;
-  }
+.incorrect {
+  background-color: red;
+  border: 3px solid red;
+}
+
+.css-button-arrow--black {
+  margin-top: 12px;
+  background-color: #3d4034;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  height: 40px;
+  min-width: 130px;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.css-button-arrow--black:hover {
+  border-radius: 5px;
+  padding-left: 8px;
+  padding-right: 24px;
+}
+
+.css-button-arrow--black:after {
+  content: '\00BB';
+  font-size: 20px;
+  line-height: 40px;
+  opacity: 0;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  transition: 0.4s;
+}
+
+.css-button-arrow--black:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.timer {
+  color: black;
+}

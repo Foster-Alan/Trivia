@@ -1,8 +1,10 @@
 import md5 from 'crypto-js/md5';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { AiOutlineReload } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import { newGame, save } from '../redux/actions';
+import '../Styles/Feedback.css';
 
 class Feedback extends Component {
   state = {
@@ -53,30 +55,37 @@ class Feedback extends Component {
     }
 
     return (
-      <div data-testid="feedback-text">
-        Feedback
-        <img data-testid="header-profile-picture" src={ urlFeedback } alt="foto" />
-        <h4 data-testid="header-player-name">{ nameFeedback }</h4>
-        <h4 data-testid="header-score">{ scoreFeedback }</h4>
-        <h4 data-testid="feedback-total-score">{ score }</h4>
-        <h4 data-testid="feedback-total-question">{ assertions }</h4>
-        <h4>{ message }</h4>
-        <button
-          type="button"
-          data-testid="btn-play-again"
-          onClick={ this.playAgain }
+      <div className="feedback-content">
+        <div
+          className="feedback"
+          data-testid="feedback-text"
         >
-          Play Again
+          <img data-testid="header-profile-picture" src={ urlFeedback } alt="foto" />
+          <h4 data-testid="header-player-name">{ nameFeedback }</h4>
+          <h4>Sua pontuação:</h4>
+          {/* <h4 data-testid="header-score">{ scoreFeedback }</h4> */}
+          <h4 data-testid="feedback-total-score">{ score }</h4>
+          <h4>Acertos:</h4>
+          <h4 data-testid="feedback-total-question">{ assertions }</h4>
+          <h4>{ message }</h4>
+          <button
+            type="button"
+            data-testid="btn-play-again"
+            onClick={ this.playAgain }
+          >
+            Play Again
+            {/* <AiOutlineReload /> */}
 
-        </button>
-        <button
-          type="button"
-          data-testid="btn-ranking"
-          onClick={ this.seeRanking }
-        >
-          Ranking
+          </button>
+          <button
+            type="button"
+            data-testid="btn-ranking"
+            onClick={ this.seeRanking }
+          >
+            Ranking
 
-        </button>
+          </button>
+        </div>
       </div>
     );
   }

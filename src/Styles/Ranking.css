@@ -1,0 +1,51 @@
+.ranking {
+  border: solid 5px black;
+  border-radius: 25px;
+  box-shadow: 5px 8px black;
+  color: white;
+  background-color:rgba(220,92,31);
+  margin: 0 560px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  height: 90vh;
+  justify-content: center;
+}
+
+.ranking h4 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.player-ranking {
+  border-radius: 25px;
+  box-shadow: 5px 8px black;
+  align-items: center;
+  border: black solid 1px;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 150px;
+}
+
+.ranking button {
+  background-color: rgba(248,175,11);
+  border-radius: 10px;
+  color: black;
+  font-weight: 800;
+  height: 40px;
+  margin-top: 10px;
+  width: 100px;
+}
+
+.ranking button:hover {
+  cursor: pointer;
+}
+
+.ranking button:hover {
+  background-color: rgb(87, 86, 85);
+  /* width: 63%; */
+}

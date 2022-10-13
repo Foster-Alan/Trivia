@@ -43,14 +43,16 @@ class Game extends Component {
 
   contTimer = () => {
     const num = 1000;
-    const intervalue = setInterval(() => {
+    this.intervalue = setInterval(() => {
       const { timer } = this.state;
-      this.setState({ timer: timer - 1 });
-      if (timer <= 0) {
-        this.setState({
-          isDisabled: true,
-        }, () => clearInterval(intervalue));
-      }
+      this.setState({ timer: timer - 1 }, () => {
+        const { timer: timer1 } = this.state;
+        if (timer1 <= 0) {
+          this.setState({
+            isDisabled: true,
+          }, () => clearInterval(this.intervalue));
+        }
+      });
     }, num);
   };
 
@@ -66,15 +68,15 @@ class Game extends Component {
     const { dispatch } = this.props;
     dispatch(scoreValue(dificultyValue));
     this.setState({
-      timer: 0,
+      isDisabled: true,
     });
+    clearInterval(this.intervalue);
   };
 
   nextButton = () => {
     const { indice } = this.state;
     const numberOfQuestions = 4;
     const control = indice < numberOfQuestions ? indice + 1 : indice;
-    console.log(control, 'clicou no prox');
     this.setState({
       timer: 30,
       isDisabled: false,
@@ -158,19 +160,21 @@ class Game extends Component {
       result = [];
     }
     return (
-      <div data-testid="game-title" className="geral-page-game">
+      <>
         <Header />
-        <div className="content-page-game">
-          <h1>
-            <BiTime />
-            {' '}
-            {timer}
+        <div data-testid="game-title" className="geral-page-game">
+          <div className="content-page-game">
+            <h1 className="timer">
+              <BiTime />
+              {' '}
+              {timer}
 
-          </h1>
-          {result}
-          {this.handleButton()}
+            </h1>
+            {result}
+            {this.handleButton()}
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

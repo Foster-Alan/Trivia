@@ -27,6 +27,7 @@ class Header extends Component {
         <header>
           <img src={ url } alt="Gravatar" data-testid="header-profile-picture" />
           <h2 data-testid="header-player-name">{name}</h2>
+          <h2>Score:</h2>
           <h2 data-testid="header-score">{score}</h2>
         </header>
       </div>

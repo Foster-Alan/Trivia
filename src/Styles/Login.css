@@ -1,93 +1,91 @@
 body {
-    background-color: rgba(0, 0, 0, 0.815);
-    color: white;
+  background-image: url("https://www.faarmembers.com/wp-content/uploads/2019/01/trivia-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100;
+  font-family: 'Redkost Comic', sans-serif;
+  color: white;
 }
 
 .Login {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 90vh;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: center;
 }
 
 .content-login {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-login {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 350px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
 }
 
 .form-login input {
-    border-radius: 10px;
-    box-shadow: 5px 8px black;
-    height: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-    width: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 8px black;
+  height: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
 }
 
 .form-login button {
-    border-radius: 10px;
-    box-shadow: 5px 8px black;
-    height: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-    width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 8px black;
+  height: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 50%;
 }
 
 .form-login button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .button-login {
-    border-radius: 10px;
-    box-shadow: 5px 8px black;
-    height: 30px;
-    margin-bottom: 15px;
-    text-align: center;
-    width: 50%;
+  border-radius: 10px;
+  box-shadow: 5px 8px black;
+  height: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 50%;
 }
 
 .button-login:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .App-logo {
-    margin: 10px;
-    height: 15vmin;
-    pointer-events: none;
-    animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake infinite 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  height: 15vmin;
+  margin: 10px;
+  pointer-events: none;
 }
 
 
 @keyframes shake {
 
-    10%,
-    90% {
-        transform: translate3d(-1px, 0, 0);
-    }
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
 
-    20%,
-    80% {
-        transform: translate3d(2px, 0, 0);
-    }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
 
-    30%,
-    50%,
-    70% {
-        transform: translate3d(-4px, 0, 0);
-    }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
 
-    40%,
-    60% {
-        transform: translate3d(4px, 0, 0);
-    }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
