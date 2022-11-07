@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { AiOutlineReload } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import { newGame } from '../redux/actions';
 import '../Styles/Ranking.css';

@@ -1,7 +1,6 @@
 import md5 from 'crypto-js/md5';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { AiOutlineReload } from 'react-icons/ai';
 import { connect } from 'react-redux';
 import { newGame, save } from '../redux/actions';
 import '../Styles/Feedback.css';
@@ -44,7 +43,7 @@ class Feedback extends Component {
 
   render() {
     const { urlFeedback, nameFeedback, scoreFeedback } = this.state;
-    const { assertions, score } = this.props;
+    const { assertions } = this.props;
     const three = 3;
     let message = '';
     console.log(assertions, 'acertos');
@@ -63,8 +62,8 @@ class Feedback extends Component {
           <img data-testid="header-profile-picture" src={ urlFeedback } alt="foto" />
           <h4 data-testid="header-player-name">{ nameFeedback }</h4>
           <h4>Sua pontuação:</h4>
-          {/* <h4 data-testid="header-score">{ scoreFeedback }</h4> */}
-          <h4 data-testid="feedback-total-score">{ score }</h4>
+          <h4 data-testid="header-score">{ scoreFeedback }</h4>
+          {/* <h4 data-testid="feedback-total-score">{ score }</h4> */}
           <h4>Acertos:</h4>
           <h4 data-testid="feedback-total-question">{ assertions }</h4>
           <h4>{ message }</h4>
