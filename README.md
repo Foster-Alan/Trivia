@@ -3,7 +3,7 @@
 
 ![App Screenshot](https://i.imgur.com/0AZXAjl.png)
 
-Nesse projeto, foi feito:
+Metas:
 
 - Um store Redux em aplicações React
 
