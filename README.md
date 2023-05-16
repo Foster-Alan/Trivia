@@ -1,10 +1,31 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+
+# Projeto Trivia
+
+![App Screenshot](https://i.imgur.com/0AZXAjl.png)
+
+Nesse projeto, foi feito:
+
+- Um store Redux em aplicações React
+
+- Reducers no Redux em aplicações React
+
+- Actions no Redux em aplicações React
+
+- Dispatchers no Redux em aplicações React
+
+- Conectar Redux aos componentes React
+
+- Actions assíncronas na sua aplicação React que faz uso de Redux.
+
+- Testes para garantir que sua aplicação possua uma boa cobertura de testes.
+
+
+## Stack utilizada
+
+**Front-end:** React, Redux
+
+
+## Link Da aplicação
+
+https://foster-trivia.netlify.app/
+
