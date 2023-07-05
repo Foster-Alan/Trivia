@@ -55,7 +55,7 @@ class Login extends Component {
               type="text"
               name="name"
               data-testid="input-player-name"
-              placeholder="Nome"
+              placeholder="Nickname"
               onChange={ this.handleChange }
               value={ name }
             />

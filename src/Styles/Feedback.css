@@ -1,22 +1,22 @@
 .feedback-content {
-  /* background-color: white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .feedback {
-  border-radius: 25px;
-  border: black solid 5px;
-  padding: 8px;
   background-color:rgba(220,92,31);
-  margin: 0px 540px;
- color: rgb(255, 255, 255);
-  align-items: center;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
-  font-size: x-large;
-  /* height: 90vh; */
+  width: 10rem;
+  height: 35rem;
+  align-items: center;
   justify-content: center;
-  box-shadow: 8px 8px black;
-  line-height: 1px;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  font-weight: 800;
 }
 
 .feedback button {

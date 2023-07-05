@@ -1,15 +1,22 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ranking {
   border: solid 5px black;
   border-radius: 25px;
   box-shadow: 5px 8px black;
   color: white;
   background-color:rgba(220,92,31);
-  margin: 0 560px;
   align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
   font-size: large;
-  height: 90vh;
+  height: 40rem;
+  width: 15rem;
   justify-content: center;
 }
 
