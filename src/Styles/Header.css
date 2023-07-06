@@ -1,3 +1,17 @@
+.App-header {
+  /* border: 1px solid red; */
+  display: flex;
+
+}
+
+.content-header {
+  /* border: 10px solid red; */
+  display: flex;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
 .content-header header {
   background-color:rgba(220,92,31);
   display: flex;
